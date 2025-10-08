@@ -1,19 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Cutlass</title>
-    <meta charset="UTF-8">
-    <style>
-      body { font-family: Arial, sans-serif; background:#0c0c0c; color:#fff; }
-      h1 { text-align: center; }
-      .infobox { text-align: left; border-radius: 8px; background-color: Grey; }
-    </style>
-  </head>
-  <body>
-    <h1>Cutlass</h1>
-    <div class="infobox">
-      <h3>Rarity: Common</h3>
-      <h3>Obtainable in: First Sea</h3>
+<head>
+  <meta charset="UTF-8">
+  <title>Cutlass</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0c0c0c;
+      color: #fff;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: 800;
+      text-align: left;
+      color: #ffcc00;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .desc-box {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 250px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    .desc-box h2 {
+      color: #ffcc00;
+      font-size: 1.3em;
+      margin-top: 0;
+    }
+
+    .item-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .item-icon {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    .item-icon img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+    }
+
+    .info-box {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    .info-box h3 {
+      color: #ffcc00;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
+      font-size: 1.1em;
+      margin: 5px 0;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Cutlass</h1>
+
+  <div class="container">
+    <div class="desc-box">
+      <h2>Description</h2>
+      <p>The Cutlass is a sword obtainable at the Sword Dealer at Marine Starter or Pirate Starter for 1000$.</p>
+      <p>UPGRADE: 5 Leather, 5 Angel Wings --> +30% damage</p>
     </div>
-  </body>
+
+    <div class="item-side">
+      <div class="item-icon">
+        <img src="https://static.wikia.nocookie.net/blox-fruits/images/3/34/Cutlass.png" alt="Cutlass Icon">
+      </div>
+
+      <div class="info-box">
+        <h3>__INFO BOX__</h3>
+        <p><strong>Obtainable in:</strong> First Sea</p>
+        <p><strong>Rarity:</strong> Common</p>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
