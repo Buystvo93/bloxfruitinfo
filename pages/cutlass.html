@@ -83,8 +83,81 @@
       text-align: center;
     }
 
+    /* ===== Upgrade Section (NEW) ===== */
+    .upgrade-section {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
 
-     /* Attack section */
+    .upgrade-header {
+      background-color: #ffcc00;
+      color: #1c1c1c;
+      font-weight: bold;
+      font-size: 1.4em;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .upgrade-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .upgrade-slot {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 0.9em;
+    }
+
+    .upgrade-slot img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .arrow-right {
+      font-size: 2em;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .upgrade-result {
+      text-align: center;
+    }
+
+    .upgrade-result img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      background-color: #2a2a2a;
+      margin-bottom: 10px;
+    }
+
+    .upgrade-result p {
+      margin: 0;
+      font-size: 0.95em;
+    }
+
+    .upgrade-result .bonus {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    /* Attack section (unchanged) */
     .attacks-section {
       margin-top: 50px;
       background-color: #1c1c1c;
@@ -154,7 +227,7 @@
 
     .price {
       color: #abfa2d;
-      }
+    }
 
     .upgrades {
       color: #fcba03;
@@ -168,7 +241,6 @@
     <div class="desc-box">
       <h2>Description</h2>
       <p>The Cutlass is a sword obtainable at the Sword Dealer at Marine Starter or Pirate Starter for <span class="price"><b>1000$.</b></span></p>
-      <p>UPGRADE: 5 Leather, 5 Angel Wings --> <span class="upgrades"><b>+30% damage</b></span></p>
     </div>
 
     <div class="item-side">
@@ -184,12 +256,38 @@
     </div>
   </div>
 
+  <!-- ===== New Upgrade Tab ===== -->
+  <div class="upgrade-section">
+    <div class="upgrade-header">Upgrading</div>
+
+    <div class="upgrade-content">
+      <div class="upgrade-slot">
+        <img src="images/leather.png" alt="Leather">
+        <span>5x Leather</span>
+      </div>
+
+      <div class="upgrade-slot">
+        <img src="images/angelwings.png" alt="Angel Wings">
+        <span>5x Angel Wings</span>
+      </div>
+
+      <div class="arrow-right">➤</div>
+
+      <div class="upgrade-result">
+        <img src="images/cutlass.png" alt="Cutlass">
+        <p>Cutlass</p>
+        <p>Common, Grade 1</p>
+        <p class="bonus">+30% Damage</p>
+      </div>
+    </div>
+  </div>
+
   <div class="attacks-section">
     <h2>Attacks</h2>
 
     <div class="attack">
       <div class="attack-header">
-        <span>[Z]: Quiet Rush          (1 Mastery)</span>
+        <span>[Z]: Quiet Rush (1 Mastery)</span>
         <span class="arrow">▶</span>
       </div>
       <div class="attack-content">
@@ -200,7 +298,7 @@
 
     <div class="attack">
       <div class="attack-header">
-        <span>[X]: Air Slash          (20 Mastery)</span>
+        <span>[X]: Air Slash (20 Mastery)</span>
         <span class="arrow">▶</span>
       </div>
       <div class="attack-content">
@@ -208,11 +306,9 @@
         <img src="images/cutlassx.gif" alt="Cutlass Heavy Strike Preview" width="200" height="228">
       </div>
     </div>
-
   </div>
 
   <script>
-    // Toggle attack menus
     document.querySelectorAll('.attack-header').forEach(header => {
       header.addEventListener('click', () => {
         const attack = header.parentElement;
