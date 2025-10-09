@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Katana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0c0c0c;
+      color: #fff;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: 800;
+      text-align: left;
+      color: #ffcc00;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .desc-box {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 250px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    .desc-box h2 {
+      color: #ffcc00;
+      font-size: 1.3em;
+      margin-top: 0;
+    }
+
+    .item-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .item-icon {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    .item-icon img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+    }
+
+    .info-box {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    .info-box h3 {
+      color: #ffcc00;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
+      font-size: 1.1em;
+      margin: 5px 0;
+      text-align: center;
+    }
+
+    /* ===== Upgrade Section (NEW) ===== */
+    .upgrade-section {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    .upgrade-header {
+      background-color: #ffcc00;
+      color: #1c1c1c;
+      font-weight: bold;
+      font-size: 1.4em;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .upgrade-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .upgrade-slot {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 0.9em;
+    }
+
+    .upgrade-slot img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .arrow-right {
+      font-size: 2em;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .upgrade-result {
+      text-align: center;
+    }
+
+    .upgrade-result img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      background-color: #2a2a2a;
+      margin-bottom: 10px;
+    }
+
+    .upgrade-result p {
+      margin: 0;
+      font-size: 0.95em;
+    }
+
+    .upgrade-result .bonus {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    /* Attack section (unchanged) */
+    .attacks-section {
+      margin-top: 50px;
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    .attacks-section h2 {
+      color: #ffcc00;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .attack {
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .attack-header {
+      padding: 15px 20px;
+      font-size: 1.1em;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .attack-header:hover {
+      background-color: #383838;
+    }
+
+    .attack-content {
+      display: none;
+      padding: 15px 20px;
+      background-color: #222;
+      border-top: 1px solid #333;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .arrow {
+      transition: transform 0.3s;
+    }
+
+    .attack.open .arrow {
+      transform: rotate(90deg);
+    }
+
+    .attack.open .attack-content {
+      display: block;
+    }
+
+    .attack-content img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .price {
+      color: #abfa2d;
+    }
+
+    .upgrades {
+      color: #fcba03;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cutlass</h1>
+
+  <div class="container">
+    <div class="desc-box">
+      <h2>Description</h2>
+      <p>The Katana is a sword obtainable at the Sword Dealer at Marine Starter or Pirate Starter for <span class="price"><b>1000$.</b></span></p>
+    </div>
+
+    <div class="item-side">
+      <div class="item-icon">
+        <img src="images/katana.png" alt="Cutlass Icon">
+      </div>
+
+      <div class="info-box">
+        <h3>INFO</h3>
+        <p><strong>Obtainable in:</strong> First Sea</p>
+        <p><strong>Rarity:</strong> Common</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== New Upgrade Tab ===== -->
+  <div class="upgrade-section">
+    <div class="upgrade-header">Upgrading</div>
+
+    <div class="upgrade-content">
+      <div class="upgrade-slot">
+        <img src="images/leather.png" alt="Leather">
+        <span>5x Leather</span>
+      </div>
+
+      <div class="upgrade-slot">
+        <img src="images/angelswings.png" alt="Angel Wings">
+        <span>5x Angel Wings</span>
+      </div>
+
+      <div class="arrow-right">➤</div>
+
+      <div class="upgrade-result">
+        <img src="images/katana.png" alt="Cutlass">
+        <p>Katana</p>
+        <p>Common, Grade 1</p>
+        <p class="bonus">+30% Damage</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="attacks-section">
+    <h2>Attacks</h2>
+
+    <div class="attack">
+      <div class="attack-header">
+        <span>[Z]: Quiet Rush (1 Mastery)</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="attack-content">
+        <p>The user dashes forward, dealing damage to enemies in the way.</p>
+        <img src="images/cutlassz.gif" alt="Cutlass Slash Preview" width="200" height="161">
+      </div>
+    </div>
+
+    <div class="attack">
+      <div class="attack-header">
+        <span>[X]: Air Slash (20 Mastery)</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="attack-content">
+        <p>A slash that goes through the air and deals damage and knocks back every enemy in its path.</p>
+        <img src="images/cutlassx.gif" alt="Cutlass Heavy Strike Preview" width="200" height="228">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.attack-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const attack = header.parentElement;
+        attack.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
