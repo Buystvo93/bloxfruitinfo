@@ -76,3 +76,8 @@ h1, h2, h3 {
   display: inline-block;
   margin-bottom: 1rem;
 }
+
+.main-icon {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+}
