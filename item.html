@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="index.html" class="back">← Back</a>
+  <div id="item-page" class="item-page"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const itemName = params.get('name');
+
+    fetch('items.json')
+      .then(res => res.json())
+      .then(items => {
+        const item = items.find(i => i.name === itemName);
+        const container = document.getElementById('item-page');
+
+        if (!item) {
+          container.innerHTML = '<p>Item not found.</p>';
+          return;
+        }
+
+        const upgrades = item.upgrades.map(u => `
+          <div class="upgrade">
+            <img src="${u.image}" alt="${u.item}">
+            <p>${u.quantity} ${u.item}</p>
+          </div>
+        `).join("");
+
+        const attacks = item.attacks.map(a => `
+          <div class="attack">
+            <h3>[${a.key}] ${a.name}</h3>
+            <p><strong>${a.mastery}</strong></p>
+            <p>${a.description}</p>
+            <img src="${a.gif}" alt="${a.name}">
+          </div>
+        `).join("");
+
+        container.innerHTML = `
+          <img src="${item.icon}" class="main-icon" alt="${item.name}">
+          <h1>${item.name}</h1>
+          <p class="description">${item.description}</p>
+          <p><strong>Obtainable in:</strong> ${item.obtainable_in}</p>
+          <p><strong>Rarity:</strong> ${item.rarity}</p>
+          <p><strong>Price:</strong> ${item.price}</p>
+
+          <h2>Upgrades</h2>
+          <div class="upgrades">${upgrades}</div>
+
+          <h2>Attacks</h2>
+          <div class="attacks">${attacks}</div>
+        `;
+      });
+  </script>
+</body>
+</html>
