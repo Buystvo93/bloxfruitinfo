@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Cutlass",
+    "icon": "images/cutlass.png",
+    "description": "The Cutlass is a sword obtainable at the Sword Dealer at Marine Starter or Pirate Starter.",
+    "obtainable_in": "First Sea",
+    "rarity": "Common",
+    "price": "1000$",
+    "upgrades": [
+      { "item": "Leather", "quantity": "5x", "image": "pages/images/leather.png" },
+      { "item": "Angel Wings", "quantity": "5x", "image": "pages/images/angelswings.png" }
+    ],
+    "attacks": [
+      {
+        "key": "Z",
+        "name": "Quiet Rush",
+        "mastery": "1 Mastery",
+        "description": "The user dashes forward, dealing damage to enemies in the way.",
+        "gif": "pages/images/cutlassz.gif"
+      },
+      {
+        "key": "X",
+        "name": "Air Slash",
+        "mastery": "20 Mastery",
+        "description": "A slash that goes through the air and deals damage and knocks back every enemy in its path.",
+        "gif": "pages/images/cutlassx.gif"
+      }
+    ]
+  }
+]
