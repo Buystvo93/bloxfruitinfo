@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Items</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Item List</h1>
+  <div id="items" class="item-list"></div>
+
+  <script>
+    fetch('items.json')
+      .then(res => res.json())
+      .then(items => {
+        const container = document.getElementById('items');
+        items.forEach(item => {
+          const card = document.createElement('a');
+          card.href = `item.html?name=${encodeURIComponent(item.name)}`;
+          card.className = 'item-card';
+          card.innerHTML = `
+            <img src="${item.icon}" alt="${item.name}">
+            <h2>${item.name}</h2>
+            <p>${item.rarity} — ${item.price}</p>
+          `;
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>
