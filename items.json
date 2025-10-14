@@ -9,8 +9,8 @@
     "upgrades": [
       { "item": "Leather", "quantity": "5x", "image": "pages/images/leather.png" },
       { "item": "Angel Wings", "quantity": "5x", "image": "pages/images/angelswings.png" },
-      "result": "+30% Damage"
     ],
+    "result": "+30% Damage",
     "attacks": [
       {
         "key": "Z",
