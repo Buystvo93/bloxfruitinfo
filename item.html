@@ -30,7 +30,7 @@
             <img src="${u.image}" alt="${u.item}" height="200" weight="200">
             <p>${u.quantity} ${u.item}</p>
           </div>
-          <h3>${item.result}</h3>
+          
         `).join("");
 
         const attacks = item.attacks.map(a => `
@@ -52,6 +52,8 @@
 
           <h2>Upgrades</h2>
           <div class="upgrades">${upgrades}</div>
+
+          <h3>${item.result}</h3>
 
           <h2>Attacks</h2>
           <div class="attacks">${attacks}</div>
