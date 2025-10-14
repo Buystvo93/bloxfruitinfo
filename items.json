@@ -56,5 +56,34 @@
         "gif": "pages/images/cutlassx.gif"
       }
     ]
+  },
+  {
+    "name": "Dual Katana",
+    "icon": "pages/images/dualkatana.png",
+    "description": "The Dual Katana is a sword obtainable at the Sword Dealer of the west at Pirate Village.",
+    "obtainable_in": "First Sea",
+    "rarity": "Common",
+    "price": "12000$",
+    "upgrades": [
+      { "item": "Leather", "quantity": "10x", "image": "pages/images/leather.png" },
+      { "item": "Angel Wings", "quantity": "12x", "image": "pages/images/angelswings.png" }
+    ],
+    "result": "+30% Damage",
+    "attacks": [
+      {
+        "key": "Z",
+        "name": "Whirlwind",
+        "mastery": "1 Mastery",
+        "description": "Sends out a medium-range, spherical slicing attack formed by arcs that carries and knocks back its targets.",
+        "gif": "pages/images/dualkatanaz.gif"
+      },
+      {
+        "key": "X",
+        "name": "Air Slash",
+        "mastery": "20 Mastery",
+        "description": "A slash that goes through the air and deals damage and knocks back every enemy in its path.",
+        "gif": "pages/images/cutlassx.gif"
+      }
+    ]
   }
 ]
