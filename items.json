@@ -1,7 +1,7 @@
 [
   {
     "name": "Cutlass",
-    "icon": "images/cutlass.png",
+    "icon": "pages/images/cutlass.png",
     "description": "The Cutlass is a sword obtainable at the Sword Dealer at Marine Starter or Pirate Starter.",
     "obtainable_in": "First Sea",
     "rarity": "Common",
