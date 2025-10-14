@@ -79,10 +79,10 @@
       },
       {
         "key": "X",
-        "name": "Air Slash",
-        "mastery": "20 Mastery",
-        "description": "A slash that goes through the air and deals damage and knocks back every enemy in its path.",
-        "gif": "pages/images/cutlassx.gif"
+        "name": "Tornado",
+        "mastery": "30 Mastery",
+        "description": "Unleashes a violently rotating whirlwind attack that damages all enemies within its radius and flings them away.",
+        "gif": "pages/images/dualkatanax.gif"
       }
     ]
   }
