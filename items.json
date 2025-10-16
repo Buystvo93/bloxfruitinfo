@@ -78,8 +78,10 @@
         "mastery": "10 Mastery",
         "description": "The user swings the sword two times diagonally before releasing a heavy slash vertically, knocking the enemy back. The slashes have a black and dark red aura.",
         "gif": "pages/images/sawz.gif"
-      },
-      {
+      }
+    ]
+  },
+  {
     "type": "Sword",
     "name": "Dual Katana",
     "icon": "pages/images/dualkatana.png",
