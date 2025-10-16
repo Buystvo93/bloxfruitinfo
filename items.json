@@ -63,7 +63,7 @@
     "type": "Sword",
     "name": "Shark Saw",
     "icon": "pages/images/saw.png",
-    "description": "The Sahrk Saw is a sword obtainable by killing the Saw.",
+    "description": "The Shark Saw is a sword obtainable by killing the Saw.",
     "obtainable_in": "First Sea",
     "rarity": "Uncommon",
     "price": "0$ (Boss Drop)",
