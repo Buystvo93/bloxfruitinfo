@@ -62,11 +62,11 @@
   {
     "type": "Boss",
     "name": "Saw",
-    "icon": "pages/images/sawboss.png",
-    "description": "Saw is a boss that appears every hour in the First Sea.",
+    "icon": "pages/images/thesaw.png",
+    "description": "Saw is a boss that appears every 1h15 in the First Sea.",
     "obtainable_in": "First Sea",
     "rarity": "Boss",
-    "hp": "1000",
-    "drops": ["Shark Saw", "Leather"]
+    "hp": "7500",
+    "drops": ["Shark Saw"]
   }
 ]
