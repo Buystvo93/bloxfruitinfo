@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Items</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Item Encyclopedia</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Item List</h1>
-  <div id="items" class="item-list"></div>
+  <h1>Item Encyclopedia</h1>
+  <div id="content"></div>
 
   <script>
     fetch('items.json')
       .then(res => res.json())
       .then(items => {
-        const container = document.getElementById('items');
+        const container = document.getElementById('content');
+        const grouped = {};
+
+        // Group items by type (Sword, Accessory, Boss, etc.)
         items.forEach(item => {
-          const card = document.createElement('a');
-          card.href = `item.html?name=${encodeURIComponent(item.name)}`;
-          card.className = 'item-card';
-          card.innerHTML = `
-            <img src="${item.icon}" alt="${item.name}">
-            <h2>${item.name}</h2>
-            <p>${item.rarity} — ${item.price}</p>
-          `;
-          container.appendChild(card);
+          if (!grouped[item.type]) grouped[item.type] = [];
+          grouped[item.type].push(item);
         });
+
+        for (const [type, group] of Object.entries(grouped)) {
+          const section = document.createElement('section');
+          section.classList.add('category-section');
+
+          section.innerHTML = `
+            <h2>${type}s</h2>
+            <div class="item-list"></div>
+          `;
+
+          const list = section.querySelector('.item-list');
+          group.forEach(item => {
+            const card = document.createElement('a');
+            card.href = `item.html?name=${encodeURIComponent(item.name)}`;
+            card.className = 'item-card';
+            card.innerHTML = `
+              <img src="${item.icon}" alt="${item.name}">
+              <h3>${item.name}</h3>
+              <p>${item.rarity || ''} ${item.price ? '— ' + item.price : ''}</p>
+            `;
+            list.appendChild(card);
+          });
+
+          container.appendChild(section);
+        }
       });
   </script>
 </body>
