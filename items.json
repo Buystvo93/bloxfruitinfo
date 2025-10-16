@@ -1,5 +1,6 @@
 [
   {
+    "type": "Sword",
     "name": "Cutlass",
     "icon": "pages/images/cutlass.png",
     "description": "The Cutlass is a sword obtainable at the Sword Dealer at Marine Starter or Pirate Starter.",
@@ -29,6 +30,7 @@
     ]
   },
   {
+    "type": "Sword",
     "name": "Katana",
     "icon": "pages/images/katana.png",
     "description": "The Katana is a sword obtainable at the Sword Dealer at Marine Starter or Pirate Starter.",
@@ -58,89 +60,13 @@
     ]
   },
   {
-    "name": "Dual Katana",
-    "icon": "pages/images/dualkatana.png",
-    "description": "The Dual Katana is a sword obtainable at the Sword Dealer of the west at Pirate Village.",
+    "type": "Boss",
+    "name": "Saw",
+    "icon": "pages/images/sawboss.png",
+    "description": "Saw is a boss that appears every hour in the First Sea.",
     "obtainable_in": "First Sea",
-    "rarity": "Common",
-    "price": "12000$",
-    "upgrades": [
-      { "item": "Leather", "quantity": "10x", "image": "pages/images/leather.png" },
-      { "item": "Angel Wings", "quantity": "12x", "image": "pages/images/angelswings.png" }
-    ],
-    "result": "+30% Damage",
-    "attacks": [
-      {
-        "key": "Z",
-        "name": "Whirlwind",
-        "mastery": "1 Mastery",
-        "description": "Sends out a medium-range, spherical slicing attack formed by arcs that carries and knocks back its targets.",
-        "gif": "pages/images/dualkatanaz.gif"
-      },
-      {
-        "key": "X",
-        "name": "Tornado",
-        "mastery": "30 Mastery",
-        "description": "Unleashes a violently rotating whirlwind attack that damages all enemies within its radius and flings them away.",
-        "gif": "pages/images/dualkatanax.gif"
-      }
-    ]
-  },
-  {
-    "name": "Iron Mace",
-    "icon": "pages/images/mace.png",
-    "description": "The Iron Mace is a sword obtainable at the Sword Dealer of the west at Pirate Village.",
-    "obtainable_in": "First Sea",
-    "rarity": "Uncommon",
-    "price": "25000$",
-    "upgrades": [
-      { "item": "Leather", "quantity": "10x", "image": "pages/images/leather.png" },
-      { "item": "Angel Wings", "quantity": "10x", "image": "pages/images/angelswings.png" }
-    ],
-    "result": "+30% Damage",
-    "attacks": [
-      {
-        "key": "Z",
-        "name": "Mace Smash",
-        "mastery": "1 Mastery",
-        "description": "The user smashes the mace on the ground, generating a powerful shockwave that inflicts damage to nearby enemies as well as three deep cuts in the ground.",
-        "gif": "pages/images/macez.gif"
-      },
-      {
-        "key": "X",
-        "name": "Killer Combo",
-        "mastery": "30 Mastery",
-        "description": "The user rapidly swings the mace, dealing damage multiple times to enemies in front of them.",
-        "gif": "pages/images/macex.gif"
-      }
-    ]
-  },
-  {
-    "name": "Shark Saw",
-    "icon": "pages/images/sharksaw.png",
-    "description": "The Shark Saw is a sword obtainable by defeating Saw in first sea.",
-    "obtainable_in": "First Sea",
-    "rarity": "Uncommon",
-    "price": "0$ (Boss Drop)",
-    "upgrades": [
-      { "item": "Leather", "quantity": "12x", "image": "pages/images/leather.png" }
-    ],
-    "result": "+25% Damage",
-    "attacks": [
-      {
-        "key": "Z",
-        "name": "Consecutive Slashes",
-        "mastery": "10 Mastery",
-        "description": "The user swings the sword two times diagonally before releasing a heavy slash vertically, knocking the enemy back. The slashes have a black and dark red aura.",
-        "gif": "pages/images/sawz.gif"
-      },
-      {
-        "key": "X",
-        "name": "Execution",
-        "mastery": "60 Mastery",
-        "description": "The user spins around in a circle while moving towards the cursor, slashing the sword around them. When hitting an enemy, they get pulled in and receive continuous damage. When the move finishes, the player does a small horizontal slash, dealing knockback and damage to the enemies caught in by the attack.",
-        "gif": "pages/images/sawx.gif"
-      }
-    ]
+    "rarity": "Boss",
+    "hp": "1000",
+    "drops": ["Shark Saw", "Leather"]
   }
 ]
