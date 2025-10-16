@@ -60,12 +60,40 @@
     ]
   },
   {
+    "type": "Sword",
+    "name": "Shark Saw",
+    "icon": "pages/images/saw.png",
+    "description": "The Sahrk Saw is a sword obtainable by killing the Saw.",
+    "obtainable_in": "First Sea",
+    "rarity": "Uncommon",
+    "price": "0$ (Boss Drop)",
+    "upgrades": [
+      { "item": "Leather", "quantity": "12x", "image": "pages/images/leather.png" }
+    ],
+    "result": "+25% Damage",
+    "attacks": [
+      {
+        "key": "Z",
+        "name": "Consecutive Slashes",
+        "mastery": "10 Mastery",
+        "description": "The user swings the sword two times diagonally before releasing a heavy slash vertically, knocking the enemy back. The slashes have a black and dark red aura.",
+        "gif": "pages/images/sawz.gif"
+      },
+      {
+        "key": "X",
+        "name": "Execution",
+        "mastery": "60 Mastery",
+        "description": "The user spins around in a circle while moving towards the cursor, slashing the sword around them. When hitting an enemy, they get pulled in and receive continuous damage. When the move finishes, the player does a small horizontal slash, dealing knockback and damage to the enemies caught in by the attack.",
+        "gif": "pages/images/sawx.gif"
+      }
+    ]
+  },
+  {
     "type": "Boss",
     "name": "Saw",
     "icon": "pages/images/thesaw.png",
     "description": "Saw is a boss that appears every 1h15 in the First Sea.",
     "obtainable_in": "First Sea",
-    "rarity": "Boss",
     "hp": "7500",
     "drops": ["Shark Saw"]
   }
