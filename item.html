@@ -42,7 +42,7 @@
             <div class="upgrades">
               ${(item.upgrades || []).map(u => `
                 <div class="upgrade">
-                  <img src="${u.image}" alt="${u.item}">
+                  <img src="${u.image}" alt="${u.item}" width="200" height="200">
                   <p>${u.quantity} ${u.item}</p>
                 </div>
               `).join('')}
