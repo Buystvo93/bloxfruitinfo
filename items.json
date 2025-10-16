@@ -112,6 +112,58 @@
     ]
   },
   {
+    "type": "Sword",
+    "name": "Shark Saw",
+    "icon": "pages/images/saw.png",
+    "description": "The Shark Saw is a sword obtainable by killing the Saw.",
+    "obtainable_in": "First Sea",
+    "rarity": "Uncommon",
+    "price": "0$ (Boss Drop)",
+    "upgrades": [
+      { "item": "Leather", "quantity": "12x", "image": "pages/images/leather.png" }
+    ],
+    "result": "+25% Damage",
+    "attacks": [
+      {
+        "key": "Z",
+        "name": "Consecutive Slashes",
+        "mastery": "10 Mastery",
+        "description": "The user swings the sword two times diagonally before releasing a heavy slash vertically, knocking the enemy back. The slashes have a black and dark red aura.",
+        "gif": "pages/images/sawz.gif"
+      }
+    ]
+  },
+  {
+    "type": "Sword",
+    "name": "Triple Katana",
+    "icon": "pages/images/trplkatana.png",
+    "description": "The Triple Katana is a sword obtainable at the sword dealer of the east at Frozen Village.",
+    "obtainable_in": "First Sea",
+    "rarity": "Uncommon",
+    "price": "60000$",
+    "upgrades": [
+      { "item": "Leather", "quantity": "15x", "image": "pages/images/leather.png" },
+      { "item": "Scrap Metal", "quantity": "15x", "image": "pages/images/scrapmetal.png" }
+    ],
+    "result": "+25% Damage",
+    "attacks": [
+      {
+        "key": "Z",
+        "name": "Air Slashes Barrage",
+        "mastery": "20 Mastery",
+        "description": "The user swings their swords in front of them, releasing blue air slashes in the direction of their cursor. These air slashes will damage enemies upon contact.",
+        "gif": "pages/images/trplkatanaz.gif"
+      },
+      {
+        "key": "X",
+        "name": "Violent Rush",
+        "mastery": "60 Mastery",
+        "description": "Unleashes a violently rotating whirlwind attack that damages all enemies within its radius and flings them away.",
+        "gif": "pages/images/trplkatanax.gif"
+      }
+    ]
+  },
+  {
     "type": "Boss",
     "name": "Saw",
     "icon": "pages/images/thesaw.png",
