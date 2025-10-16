@@ -25,39 +25,76 @@
           return;
         }
 
-        const upgrades = item.upgrades.map(u => `
-          <div class="upgrade">
-            <img src="${u.image}" alt="${u.item}" height="200" weight="200">
-            <p>${u.quantity} ${u.item}</p>
-          </div>
-          
-        `).join("");
-
-        const attacks = item.attacks.map(a => `
-          <div class="attack">
-            <h3>[${a.key}] ${a.name}</h3>
-            <p><strong>${a.mastery}</strong></p>
-            <p>${a.description}</p>
-            <img src="${a.gif}" alt="${a.name}">
-          </div>
-        `).join("");
-
-        container.innerHTML = `
+        // Common header
+        let html = `
           <img src="${item.icon}" class="main-icon" alt="${item.name}">
           <h1>${item.name}</h1>
           <p class="description">${item.description}</p>
-          <p><strong>Obtainable in:</strong> ${item.obtainable_in}</p>
-          <p><strong>Rarity:</strong> ${item.rarity}</p>
-          <p><strong>Price:</strong> ${item.price}</p>
-
-          <h2>Upgrades</h2>
-          <div class="upgrades">${upgrades}</div>
-
-          <h3>${item.result}</h3>
-
-          <h2>Attacks</h2>
-          <div class="attacks">${attacks}</div>
+          <p><strong>Obtainable in:</strong> ${item.obtainable_in || 'Unknown'}</p>
+          <p><strong>Rarity:</strong> ${item.rarity || 'N/A'}</p>
         `;
+
+        // Conditional layouts
+        if (item.type === "Sword" || item.type === "Gun") {
+          html += `
+            <p><strong>Price:</strong> ${item.price}</p>
+            <h2>Upgrades</h2>
+            <div class="upgrades">
+              ${(item.upgrades || []).map(u => `
+                <div class="upgrade">
+                  <img src="${u.image}" alt="${u.item}">
+                  <p>${u.quantity} ${u.item}</p>
+                </div>
+              `).join('')}
+            </div>
+            <h3>${item.result || ''}</h3>
+            <h2>Attacks</h2>
+            <div class="attacks">
+              ${(item.attacks || []).map(a => `
+                <div class="attack">
+                  <h3>[${a.key}] ${a.name}</h3>
+                  <p><strong>${a.mastery}</strong></p>
+                  <p>${a.description}</p>
+                  <img src="${a.gif}" alt="${a.name}">
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        else if (item.type === "Accessory") {
+          html += `
+            <p><strong>Effect:</strong> ${item.result || 'Unknown effect'}</p>
+            <h2>Upgrades</h2>
+            <div class="upgrades">
+              ${(item.upgrades || []).map(u => `
+                <div class="upgrade">
+                  <img src="${u.image}" alt="${u.item}">
+                  <p>${u.quantity} ${u.item}</p>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        else if (item.type === "Boss") {
+          html += `
+            <p><strong>HP:</strong> ${item.hp || 'Unknown'}</p>
+            <h2>Drops</h2>
+            <ul>
+              ${(item.drops || []).map(d => `<li>${d}</li>`).join('')}
+            </ul>
+          `;
+        }
+
+        else if (item.type === "Island") {
+          html += `
+            <h2>Location Info</h2>
+            <p>${item.details || 'No details available.'}</p>
+          `;
+        }
+
+        container.innerHTML = html;
       });
   </script>
 </body>
