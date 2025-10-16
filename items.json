@@ -85,5 +85,34 @@
         "gif": "pages/images/dualkatanax.gif"
       }
     ]
+  },
+  {
+    "name": "Iron Mace",
+    "icon": "pages/images/mace.png",
+    "description": "The Iron Mace is a sword obtainable at the Sword Dealer of the west at Pirate Village.",
+    "obtainable_in": "First Sea",
+    "rarity": "Uncommon",
+    "price": "25000$",
+    "upgrades": [
+      { "item": "Leather", "quantity": "10x", "image": "pages/images/leather.png" },
+      { "item": "Angel Wings", "quantity": "10x", "image": "pages/images/angelswings.png" }
+    ],
+    "result": "+30% Damage",
+    "attacks": [
+      {
+        "key": "Z",
+        "name": "Mace Smash",
+        "mastery": "1 Mastery",
+        "description": "The user smashes the mace on the ground, generating a powerful shockwave that inflicts damage to nearby enemies as well as three deep cuts in the ground.",
+        "gif": "pages/images/macez.gif"
+      },
+      {
+        "key": "X",
+        "name": "Killer Combo",
+        "mastery": "30 Mastery",
+        "description": "The user rapidly swings the mace, dealing damage multiple times to enemies in front of them.",
+        "gif": "pages/images/macex.gif"
+      }
+    ]
   }
 ]
